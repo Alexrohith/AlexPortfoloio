@@ -1,13 +1,5 @@
 
-import {
-  Activity,
-  Component,
-  HomeIcon,
-  Mail,
-  Package,
-  ScrollText,
-  SunMoon,
-} from "lucide-react";
+import { Activity, Component, HomeIcon, Mail, Package, ScrollText, SunMoon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dock, DockIcon, DockItem, DockLabel } from "@/components/ui/dock";
 import { useTheme } from "@/components/ThemeProvider";
@@ -55,7 +47,9 @@ export function NavigationDock() {
           <Link key={idx} to={item.href}>
             <DockItem className="group relative aspect-square rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition-all duration-300 dark:bg-black/20 dark:hover:bg-black/40">
               <DockLabel>{item.title}</DockLabel>
-              <DockIcon className="text-neutral-600 dark:text-neutral-300">{item.icon}</DockIcon>
+              <DockIcon className="text-neutral-600 dark:text-neutral-300">
+                {item.icon}
+              </DockIcon>
             </DockItem>
           </Link>
         ))}
