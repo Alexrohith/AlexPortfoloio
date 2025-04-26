@@ -49,22 +49,22 @@ export function NavigationDock() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-4 left-1/2 max-w-full -translate-x-1/2 z-50">
+    <div className="fixed top-4 right-4 z-50">
       <Dock className="items-end pb-3">
         {data.map((item, idx) => (
           <Link key={idx} to={item.href}>
-            <DockItem className="group relative">
+            <DockItem className="group relative aspect-square rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition-all duration-300 dark:bg-black/20 dark:hover:bg-black/40">
               <DockLabel>{item.title}</DockLabel>
-              <DockIcon>{item.icon}</DockIcon>
+              <DockIcon className="text-neutral-600 dark:text-neutral-300">{item.icon}</DockIcon>
             </DockItem>
           </Link>
         ))}
         <DockItem 
-          className="group relative cursor-pointer" 
+          className="group relative aspect-square rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition-all duration-300 dark:bg-black/20 dark:hover:bg-black/40 cursor-pointer" 
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           <DockLabel>Theme</DockLabel>
-          <DockIcon>
+          <DockIcon className="text-neutral-600 dark:text-neutral-300">
             <SunMoon className="h-full w-full" />
           </DockIcon>
         </DockItem>
